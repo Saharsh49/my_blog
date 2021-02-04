@@ -1,0 +1,16 @@
+<div class="paginator">
+  <nav aria-label="Page navigation example">
+  <ul class="pagination">
+
+
+  {%if page.has_previous%}
+    <li class="page-item my-4"><a class="btn btn-primary btn-sm" href="?page={{page.previous_page_number}}" role="button">Previous</a></li>&nbsp&nbsp
+  {%endif%}
+    &nbsp<span class="my-4"> <b>Page {{page.number}} of {{page.paginator.num_pages}}</b> </span>&nbsp&nbsp&nbsp&nbsp
+  {%if page.has_next%}
+    <li class="page-item my-4"><a class="btn btn-primary btn-sm" href="?page={{page.next_page_number}}" role="button">Next</a></li>
+  {%endif%}
+
+</ul>
+</nav>
+</div>
