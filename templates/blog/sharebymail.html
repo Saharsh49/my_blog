@@ -21,7 +21,7 @@
   width: 68%;
   float: left;
   padding: 0 0 0 0px;
-  background: white;
+  background: #c2edda;
   height: 100%;
   z-index: 0;
 
@@ -54,7 +54,7 @@ h1{
 body{
   margin-top: 5rem;
   color:black;
-  background:white;
+  background: #c2edda;
 }
 
 #date{
@@ -97,7 +97,7 @@ a{
           <h3 class="card-title">Email Successfully sent!!!</h3>
           <p class="card-text">Post with the title: {{post.title}} succesfully shared by email.</p>
           <div class="col-md-12 text-center">
-            <a class="btn btn-outline-primary btn-lg" href="http://127.0.0.1:8000/" role="button">Go to Home</a>
+            <a class="btn btn-outline-primary btn-lg" href="{% url 'home' %}" role="button">Go to Home</a>
           </div>
         </div>
       </div>

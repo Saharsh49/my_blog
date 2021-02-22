@@ -1,5 +1,5 @@
 {%extends 'blog/base1.html' %}
-{%block title_block%}MY BLOG HOME PAGE{%endblock%}
+{%block title_block%}ABOUT{%endblock%}
 
 {% block css %}
 
@@ -46,7 +46,7 @@ h2{
 }
 
 h1{
-  padding: 45px;
+  padding: 0px;
   text-align: center;
   padding-bottom: 10px;
   font-weight:bold;
@@ -87,32 +87,16 @@ a{
 }
 {% endblock %}
 
-  {%block content%}
-  <!--div class="jumbotron"-->
-  <!--h1 class="display-4 my-4"><b>MY BLOG</b></h1-->
-  {%if tag %}
-    <h3>Posts tagged with '{{tag.name}}'</h3>
-  {%endif%}
-<!--/div-->
-  <div class="card border-dark">
-      {%for post in post_list%}
-    <h2 class="card-header my-4 text-white bg-secondary">{{post.title}}</h2>
-    <div class="card-body">
-      <h5 class="card-title"><p id='date'>Published on {{post.publish}} by {{post.author|title}}</p>
-        <p>Tags:
-          {%for tag in post.tags.all %}
-          <a href="{%url 'post_list_by_tag_name' tag.slug %}" class='btn btn-success'>{{tag.name}}</a>
-              <!-- {%if not forloop.last%},{%endif%} -->
-          {%endfor%}
-        </p></h5>
-      <p class="card-text">{{post.body|truncatewords:30|linebreaks}}</p>
-      <a href="{{post.get_absolute_url}}" class="btn btn-outline-info">Read More...</a>
+{%block content%}
+<div class="container">
+  <div class="card border-secondary">
+    <div class="card-header">
+      <h1>About My Blog</h1>
     </div>
-  <br>
-    {%endfor%}
+    <div class="card-body">
+      <p>My Blog is my personal blogging website where I regularly post my blogs. Feel free to visit My Blog and read them.
+          Do share your views by posting comments. Thank You!
+      </p>
+    </div>
   </div>
-  <br>
-  {%include 'blog/pagination.html' with page=post_list %}
-
-
 {%endblock%}
